@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Grains</title>
+    <link rel="stylesheet" href="customer-dashboard.css">
+</head>
+<body>
+    
+    <nav class="navbar">       
+        <div class="logo">
+            <img src="https://i.postimg.cc/SQv7VhMq/logo.png" alt="GrainMart Logo">
+            <span>GrainMart</span>
+            
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+   
+    <section class="search-section">
+        <input type="text" id="search-input" placeholder="Search for grains...">
+        <button id="search-btn">Search</button>
+        <button id="voice-search-btn">🎤 Voice Search</button>
+    </section>
+
+   
+    <section class="filter-section">
+        <h3>Filter Grains</h3>
+
+        <div class="filter-group">
+            <label for="category-filter">Grain Type:</label>
+            <select id="category-filter">
+                <option value="all">All</option>
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="barley">Barley</option>
+                <option value="maize">Maize</option>
+                <option value="millet">Millet</option>
+                <option value="sorghum">Sorghum</option>
+                <option value="oats">Oats</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="price-filter">Price Range (per kg):</label>
+            <input type="range" id="price-filter" min="0" max="10" step="0.5" value="5" oninput="document.getElementById('price-range-label').textContent = this.value">
+            <span id="price-range-label">5</span> ₹/kg
+        </div>
+
+        <div class="filter-group">
+            <label for="quantity-filter">Available Quantity:</label>
+            <select id="quantity-filter">
+                <option value="all">All</option>
+                <option value="below10">Below 10 kg</option>
+                <option value="10to50">10 - 50 kg</option>
+                <option value="above50">Above 50 kg</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="organic-filter">Organic:</label>
+            <input type="checkbox" id="organic-filter">
+        </div>
+
+       
+        <div class="filter-group">
+            <label for="state-filter">State:</label>
+            <select id="state-filter">
+                <option value="all">All States</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="madhya pradesh">Madhya Pradesh</option>
+                <option value="punjab">Punjab</option>
+                <option value="haryana">Haryana</option>
+                <option value="uttarpradesh">Uttar Pradesh</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="city-filter">City:</label>
+            <select id="city-filter">
+                <option value="all">All Cities</option>
+                <option value="rewa">Rewa</option>
+                <option value="pune">Pune</option>
+                <option value="ujjain">Ujjain</option>
+                <option value="vidisha">Vidisha</option>
+                <option value="amritsar">Amritsar</option>
+                <option value="panipat">Panipat</option>
+                <option value="lucknow">Lucknow</option>
+            </select>
+        </div>
+    </section>
+
+    
+    <section class="hero">
+        <h1>Welcome to GrainMart</h1>
+        <p>Quality grains directly from farmers to your home.</p>
+    </section>
+
+    
+    <section class="products">
+        <h2>Available Grains</h2>
+        <div class="product-grid" id="product-grid">
+           
+            <div class="product-item" data-name="wheat" data-category="wheat" data-price="1.2" data-quantity="50" data-organic="true" data-state="maharashtra" data-city="pune">
+                <img src="https://i.postimg.cc/T2NND3w2/Screenshot-2024-09-08-102012.png" alt="Wheat">
+                <h3>Organic Wheat </h3>
+                <h4>(Pune, Maharashtra)</h4>
+                <p>₹ 25 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="rice" data-category="rice" data-price="2.5" data-quantity="100" data-organic="false" data-state="punjab" data-city="amritsar">
+                <img src="https://i.postimg.cc/hG9yN8cp/Screenshot-2024-09-08-102250.png" alt="Rice">
+                <h3>Non-Organic Rice </h3>
+                <h4>(Amritsar, Punjab)</h4>
+                <p>₹ 35.5 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="barley" data-category="barley" data-price="0.8" data-quantity="30" data-organic="true" data-state="haryana" data-city="panipat">
+                <img src="https://i.postimg.cc/SRk8v8DF/Screenshot-2024-09-08-093158.png" alt="Barley">
+                <h3>Organic Barley </h3>
+                <h4>(Panipat, Haryana)</h4>
+                <p>₹ 23 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="millet" data-category="millet" data-price="1.5" data-quantity="20" data-organic="true" data-state="maharashtra" data-city="pune">
+                <img src="https://i.postimg.cc/fLZtDrrt/Screenshot-2024-09-08-103459.png" alt="Millet">
+                <h3>Organic Millet </h3>
+                <h4>(Pune, Maharashtra)</h4>
+                <p>₹ 17.5 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="sorghum" data-category="sorghum" data-price="1.7" data-quantity="40" data-organic="false" data-state="uttarpradesh" data-city="lucknow">
+                <img src="https://i.postimg.cc/XYVNhLfY/Screenshot-2024-09-08-103006.png" alt="Sorghum">
+                <h3>Non-Organic Sorghum </h3>
+                <h4>(Lucknow, Uttar Pradesh)</h4>
+                <p>₹ 34 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="oats" data-category="oats" data-price="2.0" data-quantity="60" data-organic="true" data-state="punjab" data-city="amritsar">
+                <img src="https://i.postimg.cc/4d1wd8hS/Screenshot-2024-09-08-093017.png" alt="Oats">
+                <h3>Organic Oats </h3>
+                <h4>(Amritsar, Punjab)</h4>
+                <p>₹ 180 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="maize" data-category="maize" data-price="1.6" data-quantity="70" data-organic="false" data-state="haryana" data-city="panipat">
+                <img src="https://i.postimg.cc/pdmJxW2y/Screenshot-2024-09-08-092838.png" alt="Maize">
+                <h3>Non-Organic Maize</h3>
+                <h4>(Panipat, Haryana)</h4>
+                <p>₹ 24.3 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-item" data-name="soybean" data-category="soybean" data-price="1.3" data-quantity="80" data-organic="true" data-state="madhya pradesh" data-city="ujjain">
+                <img src="https://i.postimg.cc/mZCpvHmD/Screenshot-2024-09-08-210809.png" alt="Soybean">
+                <h3>Organic Soybean</h3>
+                <h4>(Ujjain, Madhya Pradesh)</h4>
+                <p>₹ 85 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div> 
+            <div class="product-item" data-name="gram" data-category="gram" data-price="1.4" data-quantity="40" data-organic="true" data-state="madhya pradesh" data-city="vidisha">
+                <img src="https://i.postimg.cc/wv01BpYM/Screenshot-2024-09-08-213608.png" alt="Gram">
+                <h3>Organic Gram</h3>
+                <h4>(Vidisha, Madhya Pradesh)</h4>
+                <p>₹ 70 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div> 
+            <div class="product-item" data-name="linseed" data-category="linseed" data-price="1.9" data-quantity="90" data-organic="true" data-state="madhya pradesh" data-city="rewa">
+                <img src="https://i.postimg.cc/xTTd6CN4/Screenshot-2024-09-08-214817.png" alt="linseed">
+                <h3>Organic Linseed</h3>
+                <h4>(Rewa, Madhya Pradesh)</h4>
+                <p>₹ 100 per kg</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>                                             
+        </div>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 GrainMarket. All rights reserved.</p>
+    </footer>
+
+    
+    <script src="customer-dashboard.js"></script>
+</body>
+</html>

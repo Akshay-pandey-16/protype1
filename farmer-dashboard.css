@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.navbar {
+    background-color: #1d3557;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+.language-select {
+    margin-left: 20px;
+    position: relative;
+}
+
+.language-select select {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #a8dadc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.language-select select:hover {
+    background-color: #a8dadc;
+}
+
+
+.hero {
+    background-color: #457b9d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+
+.dashboard-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.dashboard-option {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #a8dadc;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dashboard-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    animation: shake 0.5s ease;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.dashboard-option img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.dashboard-option h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.option-list {
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.2s;
+}
+
+.option-list li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 8px 10px;
+    margin: 5px 0;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.option-list li:hover {
+    background-color: #e9ecef;
+}
+
+.option-list li i {
+    margin-right: 10px;
+    color: #1d3557;
+}
+
+.option-list li a {
+    font-size: 16px;
+    color: #1d3557;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.option-list li a:hover {
+    color: #457b9d;
+}
+
+
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
